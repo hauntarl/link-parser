@@ -9,7 +9,7 @@ import (
 
 func main() {
 	var (
-		reader     = strings.NewReader(ex1HTML)
+		reader     = strings.NewReader(html)
 		links, err = link.Parse(reader)
 	)
 	if err != nil {
@@ -21,7 +21,7 @@ func main() {
 	}
 }
 
-const ex1HTML = `<html>
+const html = `<html>
 
 <body>
     <h1>Hello!</h1>

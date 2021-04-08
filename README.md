@@ -15,16 +15,15 @@ Implementation of HTML Link Parser from gophercises, including the bonus section
 
 **Features:**
 
+- creating io.Reader from string type
 - using depth first search to traverse html document
 - extracting relevant information from html document
 
 **Packages explored:**
 
 - fmt
-- os - to open and close the files
-- io - to read from file which satisfies io.Reader interface
+- strings - to create io.Reader and format relevant data
 - [golang.org/x/net/html](golang.org/x/net/html) - to parse the html document into Tree structure
-- strings - to format relevant data
 
 **Output:**
 

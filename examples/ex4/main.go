@@ -2,18 +2,16 @@ package main
 
 import (
 	"fmt"
-	"os"
+	"strings"
 
 	"github.com/hauntarl/link-parser"
 )
 
 func main() {
-	file, err := os.Open("files/ex4.html")
-	if err != nil {
-		panic(err)
-	}
-
-	links, err := link.Parse(file)
+	var (
+		reader     = strings.NewReader(html)
+		links, err = link.Parse(reader)
+	)
 	if err != nil {
 		panic(err)
 	}
@@ -22,3 +20,13 @@ func main() {
 		fmt.Println(link.String())
 	}
 }
+
+const html = `<html>
+
+<body>
+    <a href="/dog-cat">dog cat
+        <!-- commented text SHOULD NOT be included! -->
+    </a>
+</body>
+
+</html>`
