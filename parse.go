@@ -12,7 +12,7 @@ import (
 type Link struct{ Href, Text string }
 
 func (link *Link) String() string {
-	return fmt.Sprintf("%-20s: %s", link.Href, link.Text)
+	return fmt.Sprintf("%-50s: %s", link.Href, link.Text)
 }
 
 // Parse will take in an HTML document and will return a slice of links parsed

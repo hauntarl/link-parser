@@ -6,36 +6,42 @@ Implementation of HTML Link Parser from gophercises, including the bonus section
 
 **[Gophercises](https://courses.calhoun.io/courses/cor_gophercises)**  by Jon Calhoun
 
-<!--
 **Run Commands:**
 
-- go run main\main.go
-- go run main\main.go -h (--help) (to get information regarding flags)
-- go run main\main.go --yaml file-name.yaml -json=file-name.json
+- go run examples\ex1\main.go
+- go run examples\ex2\main.go
+- go run examples\ex3\main.go
+- go run examples\ex4\main.go
 
 **Features:**
 
-- grouping packages using go.mod
-- using command-line flags
-- parsing yaml bytes and files
-- parsing json bytes and files
-- setting up a basic http server
-- redirecting requests using http
-- persisting the url mapping in database
+- using depth first search to traverse html document
+- extracting relevant information from html document
 
 **Packages explored:**
 
 - fmt
-- net/http - to setup a basic http server and redirect requests
-- [gopkg.in/yaml.v2](gopkg.in/yaml.v2) - to work with yaml data
-- flag - to get yaml/json file name
-- os - to open and close the file
+- os - to open and close the files
 - io - to read from file which satisfies io.Reader interface
-- encoding/json - to work with json data
-- [github.com/boltdb/bolt](github.com/boltdb/bolt) - to store and retrieve urls for specified path
+- [golang.org/x/net/html](golang.org/x/net/html) - to parse the html document into Tree structure
+- strings - to format relevant data
 
 **Output:**
 
 ``` terminal
+D:\gophercises\link-parser>go run examples\ex1\main.go
+/other-page                                       : A link to another page some span
+/page-two                                         : A link to second page
+
+D:\gophercises\link-parser>go run examples\ex2\main.go
+https://www.twitter.com/joncalhoun                : Check me out on twitter
+https://github.com/gophercises                    : Gophercises is on Github!
+
+D:\gophercises\link-parser>go run examples\ex3\main.go
+#                                                 : Login
+/lost                                             : Lost? Need help?
+https://twitter.com/marcusolsson                  : @marcusolsson
+
+D:\gophercises\link-parser>go run examples\ex4\main.go
+/dog-cat                                          : dog cat
 ```
--->
