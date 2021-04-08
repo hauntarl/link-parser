@@ -15,7 +15,10 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	fmt.Printf("%+v\n", links)
+
+	for _, link := range links {
+		fmt.Println(link.String())
+	}
 }
 
 const ex1HTML = `<html>
